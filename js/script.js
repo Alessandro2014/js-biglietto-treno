@@ -11,7 +11,7 @@ var age = (prompt("Qual è la tua età?"));
 var kilometres = (prompt("Quanti km vuoi percorrere?"));
 var tariffsForKm = 0.21;
 var young18 = 17;
-var over65 = 65;
+var over64 = 65;
 
 var price = (kilometres * tariffsForKm);
 
@@ -22,12 +22,10 @@ var discountOver65 = (price * 0.40);
 if (age <= young18) { 
     console.log (price - discountYoung18);
     price = price - discountYoung18;
-}  else if  (age >= over65) { 
+}  else if  (age >= over64) { 
     console.log (price - discountOver65);
     price = price - discountOver65;
 }
-
-
 
 placeholder = document.getElementById("ticket");
 placeholder.innerHTML = message + price.toFixed(2) + "€"
