@@ -9,27 +9,27 @@
 var message = ("Il costo del tuo Biglietto è: ");
 var age = parseInt(prompt("Qual è la tua età?"));
 var kilometres = parseInt(prompt("Quanti km vuoi percorrere?"));
-var tariffs = 0.21
+var tariffsForKm = 0.21
 var young18 = "17"
-var adult = "18"
 var over65 = "65"
-var discountYoung18 = 
-var discountOver65 = 
 
-if (isNaN(kilometres) && isNaN(age)) {
-    if (age <= young18) { 
-        console.log (message + kilometres * tariffs);
-    }   
-    else if (age >= adult) {
-     console.log (message + kilometres * tariffs);
+var price = parseInt(kilometres * tariffsForKm);
+
+var discountYoung18 = parseInt(kilometres * 0.20);
+var discountOver65 = parseInt(kilometres * 0.40);
+
+
+if (age <= young18) { 
+        console.log (price - discountYoung18);
+    }  else if  (age >= over65) { 
+        console.log (price * discountOver65);
+    } else { 
+        console.log (price + message);
     }
-    else (age >= over65)
-}
-
-var calculatePrice = parseInt(kilometres * tariffs);
-console.log(calculatePrice);
 
 
 
-// var totalPrice = document.getElementById("ticket");
-// totalPrice.innerHTML = message + calculatePrice + "€"
+
+
+price = document.getElementById("ticket");
+price.innerHTML = message + discountYoung18 + "€"
